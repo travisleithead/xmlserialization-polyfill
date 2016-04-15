@@ -1,0 +1,17 @@
+<!doctype html>
+<title>XMLSerializer - Polyfill</title>
+<script src="xmlserializer.js"></script>
+
+<script>
+  onerror = function() {
+     alert("issue found!");
+  }
+  // Small bootstrap file
+  var d = document.createElement('div');
+  var s = new XMLSerializer();
+  var serializedDiv = s.serializeToStringPF(d);
+  if (serializedDiv == "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>")
+     alert("running");
+  else
+     alert("issue found!");
+</script>
