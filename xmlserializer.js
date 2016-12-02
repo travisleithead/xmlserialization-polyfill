@@ -478,11 +478,10 @@
          return "";
       // 3.Otherwise, attribute value is a string. Return the value of attribute value, first replacing
       //   any occurrences of the following:
-      // BUG BUG: order of ops is potentially wrong, and this potentially double-encodes existing correctly encoded entities
-      //   1.""" with "&quot;"
-      attributeValue = attributeValue.replace("\"", "&quot;");
-      //   2."&" with "&amp;"
+      //   1."&" with "&amp;"
       attributeValue = attributeValue.replace("&", "&amp;");
+      //   2.""" with "&quot;"
+      attributeValue = attributeValue.replace("\"", "&quot;");
       //   3."<" with "&lt;"
       attributeValue = attributeValue.replace("<", "&lt;");
       //   4.">" with "&gt;"
